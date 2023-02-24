@@ -1,0 +1,136 @@
+<a class="navbar-brand" style="color:rgb(173, 223, 35)" face="monaco" href="/material/listarMaterial" size="4">Materiales</a>
+<a class="navbar-brand" style="color:rgb(173, 223, 35)" face="monaco" href="/tema/listarTema" size="4">Temas</a>
+<img class="navbar-brand" src="https://i1.wp.com/docencia-online.com/wp-content/uploads/2016/05/docencia-online-mediana.png?w=840" width="48px" height="50px"></a>
+<a class="navbar-brand" style="color:rgb(35, 223, 76)" face="monaco" size="4">docente/pepito</a>
+</nav>
+</h1>
+<title>Usuarios</title>
+<br><br><br>
+
+<h1>
+    <center><h1 style="color:rgb(35, 223, 91)" face="monaco">Usuarios</h1></center>
+</h1>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<div>
+    <form action="crearUsuario" method="POST">
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="apellidos" placeholder="apellidos">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="correo" placeholder="correo">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="contrasena" placeholder="contraseña">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="id_roles" placeholder="id_roles">
+                </div>
+                <button type="submit" class="btn btn-primary">agregar</button>
+            </form>
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <br><br>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Borrar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each listaTodos_Usuario}}
+                        <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{apellidos}}</td>
+                            <td>{{correo}}</td>
+                            <td>{{id_roles}}</td>
+                            <td>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}">
+                                Eliminar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seguro desea eliminar a {{nombre}}.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="eliminarUsuario/{{id}}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                </td>
+                            <td>
+                            
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1{{id}}">
+                                Modificar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="modificarUsuario/{{id}}" method="POST">
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control" name="nombre" value="{{nombre}}" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control" name="apellidos" value="{{apellidos}}" placeholder="apellidos">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control" name="correo" value="{{correo}}" placeholder="correo">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control" name="contrasena" value="{{contrasena}}" placeholder="contraseña">
+                                                </div>
+                                           
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Modificar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

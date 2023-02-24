@@ -1,0 +1,1379 @@
+<!-- fondo incio -->
+<a class="navbar-brand" style="color:rgb(173, 223, 35)" face="monaco" href="/usuario/listarUsuario" size="4">Usuarios</a>
+<a class="navbar-brand" style="color:rgb(173, 223, 35)" face="monaco" href="/tema/listarTema" size="4">Temas</a>
+<img class="navbar-brand" src="https://i1.wp.com/docencia-online.com/wp-content/uploads/2016/05/docencia-online-mediana.png?w=840" width="48px" height="50px"></a>
+<a class="navbar-brand" style="color:rgb(35, 223, 76)" face="monaco" size="4">docente/pepito</a>
+</nav>
+</h1>
+<title>add2</title>
+<br><br><br>
+<h1 style="text-decoration:none" face="monaco"> <font color="(0, 0, 0)" size="5">Material</font></h1>
+
+
+
+
+
+<h1 style="text-decoration:none" face="monaco"> <font color="(0, 0, 0)" size="4">Castellano</font></h1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                                Agregar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="crearMaterial" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="dropdown-item disabled" tabindex="-1" aria-disabled="true" face="cambria" name="id_temas">
+                                                        <option value="1">Castellano</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Enviar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each observartema1}}
+              <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{id_temas}}</td>
+                            <td>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2{{id}}">
+                                Eliminar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seguro desea eliminar a {{nombre}}.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="eliminarMaterial/{{id}}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                </td>
+                            <td>
+                            
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1{{id}}">
+                                Editar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="modificarMaterial/{{id}}" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" value="{{nombre}}" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" value="{{descripcion}}" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="navbar-brand" style="background-color: #87aedf;" face="cambria" name="id_temas">
+                                                        <option value="/">Temas</option>
+                                                        <option value="1">Castellano</option>
+                                                        <option value="2">Filosofia</option>
+                                                        <option value="3">Fisica</option>
+                                                        <option value="4">Informatica</option>
+                                                        <option value="5">Ingles</option>
+                                                        <option value="6">Matematica</option>
+                                                        <option value="7">Naturales</option>
+                                                        <option value="8">Quimica</option>
+                                                        <option value="9">Sociales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Modificar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                            
+            </tbody>
+{{/each}}
+
+
+
+
+<h1 style="text-decoration:none" face="monaco"> <font color="(0, 0, 0)" size="4">Filosofia</font></h1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal11">
+                                Agregar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="crearMaterial" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="dropdown-item disabled" tabindex="-1" aria-disabled="true" face="cambria" name="id_temas">
+                                                        <option value="2">Filosofia</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Enviar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each observartema2}}
+              <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{id_temas}}</td>
+                            <td>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2{{id}}">
+                                Eliminar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seguro desea eliminar a {{nombre}}.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="eliminarMaterial/{{id}}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                </td>
+                            <td>
+                            
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1{{id}}">
+                                Editar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="modificarMaterial/{{id}}" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" value="{{nombre}}" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" value="{{descripcion}}" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="navbar-brand" style="background-color: #87aedf;" face="cambria" name="id_temas">
+                                                        <option value="/">Temas</option>
+                                                        <option value="1">Castellano</option>
+                                                        <option value="2">Filosofia</option>
+                                                        <option value="3">Fisica</option>
+                                                        <option value="4">Informatica</option>
+                                                        <option value="5">Ingles</option>
+                                                        <option value="6">Matematica</option>
+                                                        <option value="7">Naturales</option>
+                                                        <option value="8">Quimica</option>
+                                                        <option value="9">Sociales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Modificar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                            
+            </tbody>
+{{/each}}
+
+
+<h1 style="text-decoration:none" face="monaco"> <font color="(0, 0, 0)" size="4">Fisica</font></h1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                                Agregar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="crearMaterial" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="dropdown-item disabled" tabindex="-1" aria-disabled="true" face="cambria" name="id_temas">
+                                                        <option value="3">Fisica</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Enviar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each observartema3}}
+              <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{id_temas}}</td>
+                            <td>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2{{id}}">
+                                Eliminar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seguro desea eliminar a {{nombre}}.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="eliminarMaterial/{{id}}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                </td>
+                            <td>
+                            
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1{{id}}">
+                                Editar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="modificarMaterial/{{id}}" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" value="{{nombre}}" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" value="{{descripcion}}" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="navbar-brand" style="background-color: #87aedf;" face="cambria" name="id_temas">
+                                                        <option value="/">Temas</option>
+                                                        <option value="1">Castellano</option>
+                                                        <option value="2">Filosofia</option>
+                                                        <option value="3">Fisica</option>
+                                                        <option value="4">Informatica</option>
+                                                        <option value="5">Ingles</option>
+                                                        <option value="6">Matematica</option>
+                                                        <option value="7">Naturales</option>
+                                                        <option value="8">Quimica</option>
+                                                        <option value="9">Sociales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Modificar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                            
+            </tbody>
+{{/each}}
+
+
+
+<h1 style="text-decoration:none" face="monaco"> <font color="(0, 0, 0)" size="4">Informatica</font></h1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                                Agregar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="crearMaterial" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="dropdown-item disabled" tabindex="-1" aria-disabled="true" face="cambria" name="id_temas">
+                                                        <option value="4">Informatica</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Enviar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each observartema4}}
+              <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{id_temas}}</td>
+                            <td>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2{{id}}">
+                                Eliminar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seguro desea eliminar a {{nombre}}.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="eliminarMaterial/{{id}}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                </td>
+                            <td>
+                            
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1{{id}}">
+                                Editar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="modificarMaterial/{{id}}" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" value="{{nombre}}" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" value="{{descripcion}}" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="navbar-brand" style="background-color: #87aedf;" face="cambria" name="id_temas">
+                                                        <option value="/">Temas</option>
+                                                        <option value="1">Castellano</option>
+                                                        <option value="2">Filosofia</option>
+                                                        <option value="3">Fisica</option>
+                                                        <option value="4">Informatica</option>
+                                                        <option value="5">Ingles</option>
+                                                        <option value="6">Matematica</option>
+                                                        <option value="7">Naturales</option>
+                                                        <option value="8">Quimica</option>
+                                                        <option value="9">Sociales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Modificar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                            
+            </tbody>
+{{/each}}
+
+
+
+
+<h1 style="text-decoration:none" face="monaco"> <font color="(0, 0, 0)" size="4">Ingles</font></h1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+                                Agregar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="crearMaterial" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="dropdown-item disabled" tabindex="-1" aria-disabled="true" face="cambria" name="id_temas">
+                                                        <option value="5">Ingles</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Enviar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each observartema5}}
+              <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{id_temas}}</td>
+                            <td>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2{{id}}">
+                                Eliminar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seguro desea eliminar a {{nombre}}.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="eliminarMaterial/{{id}}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                </td>
+                            <td>
+                            
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1{{id}}">
+                                Editar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="modificarMaterial/{{id}}" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" value="{{nombre}}" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" value="{{descripcion}}" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="navbar-brand" style="background-color: #87aedf;" face="cambria" name="id_temas">
+                                                        <option value="/">Temas</option>
+                                                        <option value="1">Castellano</option>
+                                                        <option value="2">Filosofia</option>
+                                                        <option value="3">Fisica</option>
+                                                        <option value="4">Informatica</option>
+                                                        <option value="5">Ingles</option>
+                                                        <option value="6">Matematica</option>
+                                                        <option value="7">Naturales</option>
+                                                        <option value="8">Quimica</option>
+                                                        <option value="9">Sociales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Modificar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                            
+            </tbody>
+{{/each}}
+
+
+
+
+<h1 style="text-decoration:none" face="monaco"> <font color="(0, 0, 0)" size="4">Matematica</font></h1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal7">
+                                Agregar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="crearMaterial" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="dropdown-item disabled" tabindex="-1" aria-disabled="true" face="cambria" name="id_temas">
+                                                        <option value="6">Matematica</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Enviar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each observartema6}}
+              <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{id_temas}}</td>
+                            <td>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2{{id}}">
+                                Eliminar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seguro desea eliminar a {{nombre}}.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="eliminarMaterial/{{id}}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                </td>
+                            <td>
+                            
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1{{id}}">
+                                Editar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="modificarMaterial/{{id}}" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" value="{{nombre}}" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" value="{{descripcion}}" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="navbar-brand" style="background-color: #87aedf;" face="cambria" name="id_temas">
+                                                        <option value="/">Temas</option>
+                                                        <option value="1">Castellano</option>
+                                                        <option value="2">Filosofia</option>
+                                                        <option value="3">Fisica</option>
+                                                        <option value="4">Informatica</option>
+                                                        <option value="5">Ingles</option>
+                                                        <option value="6">Matematica</option>
+                                                        <option value="7">Naturales</option>
+                                                        <option value="8">Quimica</option>
+                                                        <option value="9">Sociales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Modificar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                            
+            </tbody>
+{{/each}}
+
+
+
+<h1 style="text-decoration:none" face="monaco"> <font color="(0, 0, 0)" size="4">Naturales</font></h1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal8">
+                                Agregar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="crearMaterial" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="dropdown-item disabled" tabindex="-1" aria-disabled="true" face="cambria" name="id_temas">
+                                                        <option value="7">Naturales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Enviar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each observartema7}}
+              <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{id_temas}}</td>
+                            <td>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2{{id}}">
+                                Eliminar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seguro desea eliminar a {{nombre}}.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="eliminarMaterial/{{id}}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                </td>
+                            <td>
+                            
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1{{id}}">
+                                Editar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="modificarMaterial/{{id}}" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" value="{{nombre}}" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" value="{{descripcion}}" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="navbar-brand" style="background-color: #87aedf;" face="cambria" name="id_temas">
+                                                        <option value="/">Temas</option>
+                                                        <option value="1">Castellano</option>
+                                                        <option value="2">Filosofia</option>
+                                                        <option value="3">Fisica</option>
+                                                        <option value="4">Informatica</option>
+                                                        <option value="5">Ingles</option>
+                                                        <option value="6">Matematica</option>
+                                                        <option value="7">Naturales</option>
+                                                        <option value="8">Quimica</option>
+                                                        <option value="9">Sociales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Modificar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                            
+            </tbody>
+{{/each}}
+
+
+
+
+<h1 style="text-decoration:none" face="monaco"> <font color="(0, 0, 0)" size="4">Quimica</font></h1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal9">
+                                Agregar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="crearMaterial" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="dropdown-item disabled" tabindex="-1" aria-disabled="true" face="cambria" name="id_temas">
+                                                        <option value="8">Quimica</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Enviar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each observartema8}}
+              <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{id_temas}}</td>
+                            <td>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2{{id}}">
+                                Eliminar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seguro desea eliminar a {{nombre}}.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="eliminarMaterial/{{id}}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                </td>
+                            <td>
+                            
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1{{id}}">
+                                Editar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="modificarMaterial/{{id}}" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" value="{{nombre}}" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" value="{{descripcion}}" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="navbar-brand" style="background-color: #87aedf;" face="cambria" name="id_temas">
+                                                        <option value="/">Temas</option>
+                                                        <option value="1">Castellano</option>
+                                                        <option value="2">Filosofia</option>
+                                                        <option value="3">Fisica</option>
+                                                        <option value="4">Informatica</option>
+                                                        <option value="5">Ingles</option>
+                                                        <option value="6">Matematica</option>
+                                                        <option value="7">Naturales</option>
+                                                        <option value="8">Quimica</option>
+                                                        <option value="9">Sociales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Modificar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                            
+            </tbody>
+{{/each}}
+
+
+
+<h1 style="text-decoration:none" face="monaco"> <font color="(0, 0, 0)" size="4">Sociales</font></h1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal10">
+                                Agregar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="crearMaterial" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="dropdown-item disabled" tabindex="-1" aria-disabled="true" face="cambria" name="id_temas">
+                                                        <option value="9">Sociales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Enviar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each observartema9}}
+              <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{id_temas}}</td>
+                            <td>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2{{id}}">
+                                Eliminar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seguro desea eliminar a {{nombre}}.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="eliminarMaterial/{{id}}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                </td>
+                            <td>
+                            
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1{{id}}">
+                                Editar 
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                                <form action="modificarMaterial/{{id}}" method="POST">
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nombre</h5>
+                                                    <input type="text" class="form-control" name="nombre" value="{{nombre}}" placeholder="nombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Descripcion</h5>
+                                                    <input type="text" class="form-control" name="descripcion" value="{{descripcion}}" placeholder="descripcion">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h5 class="modal-title" id="exampleModalLabel">id_temas</h5>
+                                                    <select class="navbar-brand" style="background-color: #87aedf;" face="cambria" name="id_temas">
+                                                        <option value="/">Temas</option>
+                                                        <option value="1">Castellano</option>
+                                                        <option value="2">Filosofia</option>
+                                                        <option value="3">Fisica</option>
+                                                        <option value="4">Informatica</option>
+                                                        <option value="5">Ingles</option>
+                                                        <option value="6">Matematica</option>
+                                                        <option value="7">Naturales</option>
+                                                        <option value="8">Quimica</option>
+                                                        <option value="9">Sociales</option>
+                                                    </select>
+                                                </div>        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit"  class="btn btn-success">Modificar</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </td>
+                            
+            </tbody>
+{{/each}}
+
+
+<br>
+<br>
+</center></h1>
